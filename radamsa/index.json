@@ -6,7 +6,7 @@
 	"details": {
 		"steps": [{
 			"title": "Step 1 - Install Radamsa",
-			"text": "step1_intall.md"
+			"text": "step1_install.md"
 		}, {
 			"title": "Step 2 - Fuzzing from stdin",
 			"text": "step2_stdin.md"
