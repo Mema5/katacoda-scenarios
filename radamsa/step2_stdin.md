@@ -44,4 +44,4 @@ This one is interesting, as it plays with space characters, carriage return and 
 
 Finally, this last output features a kind of injection in the string, which can be interesting to prevent the program from eventual attacks. 
 
-For more information on all radamsa can do and what is behind, check [their gitlab repository](https://gitlab.com/akihe/radamsa).
+For more information on all that radamsa can do and what is behind, check [their gitlab repository](https://gitlab.com/akihe/radamsa).
