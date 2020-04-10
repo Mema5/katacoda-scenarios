@@ -19,7 +19,7 @@
 		}],
 		"intro": {
 			"text": "step0_intro.md",
-			"credits": "This tutorial was created by Nicolai Hellesnes and Maël Madon as part of a Master's course assignment: https://github.com/KTH/devops-course/tree/master/contributions/tutorial/hellesnes-madon ."
+			"credits": "This tutorial was created by Nicolai Hellesnes and Maël Madon as part of a [Master's course assignment](https://github.com/KTH/devops-course/tree/master/contributions/tutorial/hellesnes-madon)."
 		},
 		"finish": {
 			"text": "step5_conclu.md"
