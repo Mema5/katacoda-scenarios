@@ -24,7 +24,15 @@
 		"finish": {
 			"text": "step5_conclu.md"
 		}
-	},
+    },
+    "assets": {
+        "client": [
+          {
+            "file": "PrimeFactor.java",
+            "target": "~/"
+          }
+        ]
+    },
 	"files": [
         "PrimeFactor.java"
     ],
