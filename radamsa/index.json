@@ -1,47 +1,58 @@
 {
-	"title": "Radamsa tutorial",
+    "title": "Radamsa tutorial",
     "description": "Install and start black-box fuzzing with Radamsa",
     "difficulty": "beginner",
     "time": "30 minutes",
-	"details": {
-		"steps": [{
-			"title": "Step 1 - Install Radamsa",
-			"text": "step1_install.md"
-		}, {
-			"title": "Step 2 - Fuzzing from stdin",
-			"text": "step2_stdin.md"
-		}, {
-			"title": "Step 3 - Fuzz testing your program",
-			"text": "step3_fuzzing_program.md"
-		}, {
-			"title": "Step 4 - Network fuzzing",
-			"text": "step4_network.md"
-		}],
-		"intro": {
-			"text": "step0_intro.md",
-			"credits": "This tutorial was created by Nicolai Hellesnes and Maël Madon as part of a [Master's course assignment](https://github.com/KTH/devops-course/tree/master/contributions/tutorial/hellesnes-madon)."
-		},
-		"finish": {
-			"text": "step5_conclu.md"
-		}
+    "details": {
+        "steps": [
+            {
+                "title": "Step 1 - Install Radamsa",
+                "text": "step1_install.md"
+            },
+            {
+                "title": "Step 2 - Fuzzing from stdin",
+                "text": "step2_stdin.md"
+            },
+            {
+                "title": "Step 3 - Fuzz testing your program",
+                "text": "step3_fuzzing_program.md"
+            },
+            {
+                "title": "Step 4 - Network fuzzing",
+                "text": "step4_network.md"
+            }
+        ],
+        "intro": {
+            "text": "step0_intro.md",
+            "credits": "This tutorial was created by Nicolai Hellesnes and Maël Madon as part of a [Master's course assignment](https://github.com/KTH/devops-course/tree/master/contributions/tutorial/hellesnes-madon)."
+        },
+        "finish": {
+            "text": "step5_conclu.md"
+        }
     },
     "assets": {
         "client": [
-          {
-            "file": "PrimeFactor.java",
-            "target": "~/"
-          }
+            {
+                "file": "PrimeFactor.java",
+                "target": "~/"
+            }
+        ],
+        "host01": [
+            {
+                "file": "PrimeFactor.java",
+                "target": "~/"
+            }
         ]
     },
-	"files": [
+    "files": [
         "PrimeFactor.java"
     ],
-	"environment": {
+    "environment": {
         "uilayout": "terminal",
         "uisettings": "java",
-		"uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
     },
     "backend": {
-      "imageid": "java8"
+        "imageid": "java8"
     }
 }

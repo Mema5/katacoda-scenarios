@@ -2,7 +2,7 @@ Now that we know more what radamsa is capable of, let's use it to fuzz our progr
 
 For this purpose, I made a Java program called `PrimeFactor.java` which takes an integer as command line input, and outputs its prime factor decomposition.
 
-```java
+<pre class="file">
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +26,6 @@ public class PrimeFactor {
         System.out.println();
     }
 }
-```
+</pre>
 
 You can compile this program by running `javac PrimeFactor.java`{{execute}} and then try it with `java PrimeFactor 52`{{execute}}.
