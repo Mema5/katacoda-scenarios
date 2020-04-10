@@ -25,9 +25,12 @@
 			"text": "step5_conclu.md"
 		}
 	},
-	"files": ["Makefile"],
+	"files": [
+        "PrimeFactor.java"
+    ],
 	"environment": {
-		"uilayout": "terminal",
+        "uilayout": "terminal",
+        "uisettings": "java",
 		"uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
     },
     "backend": {
