@@ -34,7 +34,7 @@
         "client": [
             {
                 "file": "PrimeFactor.java",
-                "target": "~/"
+                "target": "/home/scrapbook/tutorial"
             }
         ],
         "host01": [
