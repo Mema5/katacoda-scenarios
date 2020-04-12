@@ -37,8 +37,10 @@ When that is done, you should move to the newly created radamsa directory with t
 
 open the Makefile, which can be found in the radamsa directory. Find line 38 & 39, which should look like below
 
-```-mkdir -p $(DESTDIR)$(PREFIX)/bin
-cp bin/radamsa $(DESTDIR)$(PREFIX)/bin```
+```
+-mkdir -p $(DESTDIR)$(PREFIX)/bin
+cp bin/radamsa $(DESTDIR)$(PREFIX)/bin
+```
 
 On line 38 & 39 change the rightmost /bin into /local/bin.
 
