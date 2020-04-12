@@ -18,11 +18,11 @@ The installation of Radamsa should now be done, you can test it out by running
 `echo "hello" | radamsa`
 
 # Mac
-The installation for mac is a bit different, the easiest way is to use brew. If you have brew you can use the following command to install Radamsa
+The installation for mac is a bit different, the easiest way is to use [brew](https://brew.sh/). If you have brew you can use the following command to install Radamsa
 
 `brew install`
 
-After that the installation should be done and can be tested by running
+After that the installation should be done and radamsa can be tested by running
 
 `echo "hello" | radamsa`
 
@@ -36,8 +36,9 @@ When that is done, you should move to the newly created radamsa directory with t
 `cd radamsa`
 
 open the Makefile, which can be found in the radamsa directory. Find line 38 & 39, which should look like below
-`-mkdir -p $(DESTDIR)$(PREFIX)/bin
-cp bin/radamsa $(DESTDIR)$(PREFIX)/bin`
+
+```-mkdir -p $(DESTDIR)$(PREFIX)/bin
+cp bin/radamsa $(DESTDIR)$(PREFIX)/bin```
 
 On line 38 & 39 change the rightmost /bin into /local/bin.
 
