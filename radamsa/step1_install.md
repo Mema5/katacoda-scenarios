@@ -1,23 +1,25 @@
-# Linux
+In this first step you will learn how to install radamsa. We gave instructions for the three main operating systems but only the lines in the "Linux" section have to be run in the interactive terminal to complete this tuorial.
+
+## Linux
 Installing Radamsa on linux is very straightforward, the prerequisites needed are wget, make, git, and gcc. If you do not have all of these, install them before continuing the tutorial.
 
 First you need to download the code from gitlab, this can be done with the command
 
-`git clone https://gitlab.com/akihe/radamsa.git`
+`git clone https://gitlab.com/akihe/radamsa.git`{{execute}}
 
 When that is done, you should move to the newly created radamsa directory with the command
 
-`cd radamsa`
+`cd radamsa`{{execute}}
 
 Lastly install radamsa by running the following command
 
-`sudo make install`
+`sudo make install`{{execute}}
 
 The installation of Radamsa should now be done, you can test it out by running
 
-`echo "hello" | radamsa`
+`echo "hello" | radamsa`{{execute}}
 
-# Mac
+## Mac
 The installation for mac is a bit different, the easiest way is to use [brew](https://brew.sh/). If you have brew you can use the following command to install Radamsa
 
 `brew install`
@@ -52,5 +54,7 @@ The installation of Radamsa should now be done, you can test it out by running
 
 `echo "hello" | radamsa`
 
-# Windows
-Installing Radamsa on windows requires [cygwin](https://www.cygwin.com/), download the setup program from their website, run the installer to install cygwin and install the cygwin packages wget, make, git, and clang. For testing purposes for this tutorial wget 1.19.1-2, make, 4.3-1, git 2.21.0-1, and clang 8.0.1-1 were used. After cygwin and the required packages has been installed, open cygwin and follow the linux part of the installation tutorial to install radamsa.
+## Windows
+Installing Radamsa on windows requires [cygwin](https://www.cygwin.com/): download the setup program from their website, run the installer to install cygwin and install the cygwin packages wget, make, git, and clang. For testing purposes for this tutorial wget 1.19.1-2, make 4.3-1, git 2.21.0-1, and clang 8.0.1-1 were used. 
+
+After cygwin and the required packages has been installed, open cygwin and follow the linux part of the installation tutorial to install radamsa.
