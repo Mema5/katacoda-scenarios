@@ -22,7 +22,7 @@ The installation of Radamsa should now be done, you can test it out by running
 ## Mac
 The installation for mac is a bit different, the easiest way is to use [brew](https://brew.sh/). If you have brew you can use the following command to install Radamsa
 
-`brew install`
+`brew install radamsa`
 
 After that the installation should be done and radamsa can be tested by running
 
