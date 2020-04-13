@@ -27,7 +27,8 @@
             },
             {
                 "title": "Step 3 - Fuzz testing your program",
-                "text": "step3_fuzzing_program.md"
+                "text": "step3_fuzzing_program.md",
+                "code": "step3.sh"
             },
             {
                 "title": "Step 4 - Network fuzzing",
