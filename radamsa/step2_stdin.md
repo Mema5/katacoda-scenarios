@@ -40,7 +40,9 @@ What d ᅠo                                                                   
 
 This one is interesting, as it plays with space characters, carriage return and new line, often troublesome in programs.
 
-`What do you%n!xcalc�5530413�--6803452o, radamsa?`
+```
+What do you%n!xcalc�5530413�--6803452o, radamsa?
+```
 
 Finally, this last output features a kind of injection in the string, which can be interesting to prevent the program from eventual attacks. 
 
