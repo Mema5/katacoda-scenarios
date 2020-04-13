@@ -7,11 +7,13 @@ Fuzzing (or fuzz testing) helps developers to find bugs or security threats in t
 
 Good test inputs:
 
-```primefactor 24645342962386
+```
+primefactor 24645342962386
 primefactor 10000000000000000000000000000000    # integer overflow
 primefactor -3                                  # negative numbers
 primefactor 42 546                              # unexpected argument
-primefactor "I’m a integer"                     # wrong argument``` 
+primefactor "I’m a integer"                     # wrong argument
+``` 
 
 Fuzz testing is really used in practice to find weaknesses in security-critical programs. For example, the main web browsers (Google Chrome, Firefox, Internet Explorer…) are known to be constantly running fuzzing campaigns with thousands of nodes on their products. Radamsa, the fuzzer presented in this tutorial, has helped finding non-trivial issues in them and in other real-world programs (see [their readme](https://gitlab.com/akihe/radamsa#some-known-results) for a list of discovered vulnerabilities).
 
