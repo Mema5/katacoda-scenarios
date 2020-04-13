@@ -13,7 +13,7 @@ When that is done, you should move to the newly created radamsa directory with t
 
 Lastly install radamsa by running the following command
 
-`sudo make install`{{execute}}
+`make install`{{execute}}
 
 The installation of Radamsa should now be done, you can test it out by running
 
