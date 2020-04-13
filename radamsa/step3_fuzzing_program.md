@@ -55,4 +55,4 @@ while true; do
 done
 </pre>
 
-You can test it yourself by running `sh crash_script.sh`{{execute}}.
+You can test it yourself by running `sh crash_script.sh`{{execute}} and stop it when you want with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
