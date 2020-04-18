@@ -1,0 +1,108 @@
+# A java server
+
+To showcase more advanced features of Radamsa we created an java server called `Server.java`. The server takes a request and looks if it contains a cookie, if the request contains a cookie the server will answer "hello, old user". If the request does not contain a cookie the server will give the client a cookie and answer with "hello, new user".
+
+```
+import java.net.*;
+import java.io.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Server {
+    private int port;
+    private Socket socket = null;
+    private BufferedReader in = null;
+    private ServerSocket serverSocket = null;
+    private PrintWriter out = null;
+    private int client_id = 0;
+
+    public Server(int port) {
+        this.port = port;
+    }
+
+    public void run() throws IOException {
+        String default_http = "HTTP/1.1 200 OK\nContent-Type: text/plain\n";
+        try {
+            serverSocket = new ServerSocket(this.port);
+        } catch (IOException e) {
+            System.err.println("failed to listen to port: " + this.port);
+            System.exit(1);
+        }
+        System.out.println("succeded to listen to port: " + this.port);
+
+        while (true) {
+            try {
+                socket = serverSocket.accept();
+                out = new PrintWriter(socket.getOutputStream(), true);
+                in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                String get = "";
+                String line = " ";
+                int has_read_id = -1;
+
+                while (in.ready()) {
+                    System.out.println(line);
+                    if (line.equals("GET / HTTP/1.1")){
+                        get = line;
+                    }
+                
+                   // get user id of a user
+                   if (line.contains("Cookie")){
+                        Matcher matcher = Pattern.compile("client_id=(\\d*)").matcher(line);
+                        matcher.find();
+                        client_id = Integer.parseInt(matcher.group(1));
+                        has_read_id = 1;
+                    }
+                    line = in.readLine();
+                }
+                // if new user
+                if (has_read_id == -1){
+                    if ("GET / HTTP/1.1".equals(get)){
+                        out.println("HTTP/1.1 200 OK\nContent-Type: text/plain\nSet-Cookie: client_id="
+                        + client_id +"\n\n");
+                        out.println("hello, new user");
+                        client_id += 1;
+
+                        }
+                    }
+                // if returning user
+                else if (("GET / HTTP/1.1".equals(get)) && (has_read_id != -1)){
+                    out.println(default_http + "\n\n");
+                    out.println("hello, old user!");
+                }
+              
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+            in.close();
+            out.close();
+        }
+    }
+    public static void main(String[] args) throws IOException {
+        Server server = new Server(8080);
+        server.run();
+    }
+}
+```
+The program can be compiled by running `javac Server.java`, to run it write `java Server`.
+
+# Fuzz a server
+With the `-o` option of radamsa you can decide where the radamsa output should be output to. This means that radamsa can be used to fuzz a server by acting as a client. With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8989 -n inf http` to fuzz the server. With the `-o` option we tell radamsa where to output, with -n we tell radamsa how many times it should run (inf means infinite), and http is the name of the file that we are using to generate the radamsa output. In this case the http file contains the following
+
+```GET / HTTP/1.1
+Host: localhost:8989
+Connection: keep-alive
+Cache-Control: max-age=0
+DNT: 1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36
+Sec-Fetch-Dest: document
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9,sv;q=0.8
+Cookie: client_id=0
+```
+
+After having compiled the sever and created the http file, start the server and then try the radamsa command above. You will probably find an exception quite soon after starting running the radamsa command. Both the server and the radamsa script can be stopped with `Ctrl + c`.
