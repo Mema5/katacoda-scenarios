@@ -1,8 +1,7 @@
-# A java server
+## A java server
+To showcase more advanced features of Radamsa we created an java server called `Server.java`. The server takes a request and looks if it contains a cookie, if the request contains a cookie the server will answer `hello, old user`. If the request does not contain a cookie the server will give the client a cookie and answer with `hello, new user`.
 
-To showcase more advanced features of Radamsa we created an java server called `Server.java`. The server takes a request and looks if it contains a cookie, if the request contains a cookie the server will answer "hello, old user". If the request does not contain a cookie the server will give the client a cookie and answer with "hello, new user".
-
-```
+<pre class="file">
 import java.net.*;
 import java.io.*;
 import java.util.regex.Matcher;
@@ -82,11 +81,12 @@ public class Server {
         server.run();
     }
 }
-```
-The program can be compiled by running `javac Server.java`, to run it write `java Server`.
+</pre>
 
-# Fuzz a server
-With the `-o` option of radamsa you can decide where the radamsa output should be output to. This means that radamsa can be used to fuzz a server by acting as a client. With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8989 -n inf http` to fuzz the server. With the `-o` option we tell radamsa where to output, with -n we tell radamsa how many times it should run (inf means infinite), and http is the name of the file that we are using to generate the radamsa output. In this case the http file contains the following
+The program can be compiled by running `javac Server.java`{{execute}}, to run it write `java Server`{{execute}}.
+
+## Fuzz a server
+With the `-o` option of radamsa you can decide where the radamsa output should be output to. This means that radamsa can be used to fuzz a server by acting as a client. With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8989 -n inf http` to fuzz the server. With the `-o` option we tell radamsa where to output, with `-n` we tell radamsa how many times it should run (`inf` means infinite), and `http` is the name of the file that we are using to generate the radamsa output. In this case the `http` file contains the following
 
 ```GET / HTTP/1.1
 Host: localhost:8989
@@ -105,4 +105,4 @@ Accept-Language: en-US,en;q=0.9,sv;q=0.8
 Cookie: client_id=0
 ```
 
-After having compiled the sever and created the http file, start the server and then try the radamsa command above. You will probably find an exception quite soon after starting running the radamsa command. Both the server and the radamsa script can be stopped with `Ctrl + c`.
+After having compiled the sever and created the `http` file, start the server and then try the radamsa command above. You will probably find an exception quite soon after starting running the radamsa command. Both the server and the radamsa script can be stopped with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
