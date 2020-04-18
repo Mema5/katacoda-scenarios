@@ -86,10 +86,10 @@ public class Server {
 The program can be compiled by running `javac Server.java`{{execute}}, to run it write `java Server`{{execute}}.
 
 ## Fuzz a server
-With the `-o` option of radamsa you can decide where the radamsa output should be output to. This means that radamsa can be used to fuzz a server by acting as a client. With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8989 -n inf http` to fuzz the server. With the `-o` option we tell radamsa where to output, with `-n` we tell radamsa how many times it should run (`inf` means infinite), and `http` is the name of the file that we are using to generate the radamsa output. In this case the `http` file contains the following
+With the `-o` option of radamsa you can decide where the radamsa output should be output to. This means that radamsa can be used to fuzz a server by acting as a client. With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8080 -n inf http` to fuzz the server. With the `-o` option we tell radamsa where to output, with `-n` we tell radamsa how many times it should run (`inf` means infinite), and `http` is the name of the file that we are using to generate the radamsa output. In this case the `http` file contains the following
 
 ```GET / HTTP/1.1
-Host: localhost:8989
+Host: localhost:8080
 Connection: keep-alive
 Cache-Control: max-age=0
 DNT: 1
