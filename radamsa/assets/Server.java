@@ -74,7 +74,7 @@ public class Server {
         }
     }
     public static void main(String[] args) throws IOException {
-        Server server = new Server(8989);
+        Server server = new Server(8080);
         server.run();
     }
 }
