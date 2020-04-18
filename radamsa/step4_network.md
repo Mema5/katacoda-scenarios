@@ -27,7 +27,7 @@ public class Server {
             System.err.println("failed to listen to port: " + this.port);
             System.exit(1);
         }
-        System.out.println("succeded to listen to port: " + this.port);
+        System.out.println("succeeded to listen to port: " + this.port);
 
         while (true) {
             try {
@@ -66,7 +66,7 @@ public class Server {
                 // if returning user
                 else if (("GET / HTTP/1.1".equals(get)) && (has_read_id != -1)){
                     out.println(default_http + "\n\n");
-                    out.println("hello, old user!");
+                    out.println("hello, old user");
                 }
               
             }catch (IOException e){
