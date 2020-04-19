@@ -33,10 +33,14 @@
             {
                 "title": "Step 4 - Network fuzzing",
                 "text": "step4_network.md"
+            },
+            {
+                "title": "Conclusion",
+                "text": "step5_conclu.md"
             }
         ],
         "finish": {
-            "text": "step5_conclu.md"
+            "text": "finish.md"
         }
     },
     "environment": {
