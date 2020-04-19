@@ -85,14 +85,15 @@ public class Server {
 }
 </pre>
 
-The program can be compiled with `javac Server.java`{{execute}} and run in background with `java Server &`{{execute}}. It is now listening port 8080 on localhost.
+The program can be compiled with `javac Server.java`{{execute}} and run in background with `java Server`{{execute}}. It is now listening port 8080 on localhost.
 
 ## Try the server
+To try the server we can use the command `curl localhost:8080`{{execute T2}} this will open a new terminal and should result in a response from the server.
 
 ## Fuzz the server
 With the `-o` option, you can decide where Radamsa should output to. This means that Radamsa can be used to fuzz a server by acting as a client. 
 
-With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8080 -n inf http` to fuzz the server. With the `-o` option we tell radamsa where to output, with `-n` we tell radamsa how many times it should run (`inf` means infinite), and `http` is the name of the file that we are using to generate the radamsa output. In this case the `http` file contains the following
+With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8080 -n inf http`{{execute T2}} to fuzz the server. With the `-o` option we tell radamsa where to output, with `-n` we tell radamsa how many times it should run (`inf` means infinite), and `http` is the name of the file that we are using to generate the radamsa output. In this case the `http` file contains the following
 
 ```GET / HTTP/1.1
 Host: localhost:8080
