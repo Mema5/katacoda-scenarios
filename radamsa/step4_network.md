@@ -95,7 +95,7 @@ To try the server we can use the command `curl localhost:8080`{{execute T2}} thi
 
 ## Fuzz the server
 With the `-o` option, you can decide where Radamsa should output to. This means that Radamsa can be used to fuzz a server by acting as a client. 
-With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8080 -n 1 http`{{execute T2}} With the `-o` option we now tell radamsa to output on port 8080 on localhost, with `-n` we tell radamsa how many times it should run. The `http` file is a premade file used to generate the fuzzing from radamsa, it contains the following
+With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8080 -s 0 -n 1 http`{{execute T2}} With the `-o` option we now tell radamsa to output on port 8080 on localhost, the`-s` option, which is the seed, specifies a random state to start from. The seed is always a decimal number. Starting multiple times with the same seed will generate the same output as long as the other arguments are the same. With `-n` option we tell radamsa how many times it should run. The `http` file is a premade file used to generate the fuzzing from radamsa, it contains the following
 
 ```GET / HTTP/1.1
 Host: localhost:8080
