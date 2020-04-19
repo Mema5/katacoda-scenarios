@@ -1,7 +1,7 @@
 Almost there! Now let's see another example.
 
 ## A java server
-To showcase more advanced features of Radamsa we created an java server called `Server.java`. The server takes an http request and looks if it contains a cookie. If the request contains a cookie the server will answer `hello, old user`. If the request does not contain a cookie the server will give the client a cookie and answer with `hello, new user`.
+To showcase more advanced features of Radamsa we created an java server called `Server.java`. The server takes an http request and checks if the request contains a cookie. If the request contains a cookie the server will answer `hello, old user`. If the request does not contain a cookie the server will give the client a cookie and answer with `hello, new user`.
 
 <pre class="file">
 import java.net.*;
@@ -85,15 +85,14 @@ public class Server {
 }
 </pre>
 
-The program can be compiled with `javac Server.java`{{execute}} and run in background with `java Server`{{execute}}. It is now listening port 8080 on localhost.
+The program can be compiled with `javac Server.java`{{execute}}. To run the program use the `java Server`{{execute}} command. The server is now listening on port 8080 on localhost.
 
 ## Try the server
 To try the server we can use the command `curl localhost:8080`{{execute T2}} this will open a new terminal and should result in a response from the server.
 
 ## Fuzz the server
 With the `-o` option, you can decide where Radamsa should output to. This means that Radamsa can be used to fuzz a server by acting as a client. 
-
-With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8080 -n inf http`{{execute T2}} to fuzz the server. With the `-o` option we tell radamsa where to output, with `-n` we tell radamsa how many times it should run (`inf` means infinite), and `http` is the name of the file that we are using to generate the radamsa output. In this case the `http` file contains the following
+With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8080 -n 1 http` {{execute T2}} With the `-o` option we tell radamsa where to output, with `-n` we tell radamsa how many times it should run. The `http` file is a premade file used to generate the fuzzing from radamsa, it contains the following
 
 ```GET / HTTP/1.1
 Host: localhost:8080
@@ -111,5 +110,7 @@ Accept-Encoding: gzip, deflate, br
 Accept-Language: en-US,en;q=0.9,sv;q=0.8
 Cookie: client_id=0
 ```
+After running the command you can open `terminal window 1` to see the request you sent to the server.
 
-After having compiled the sever and created the `http` file, start the server and then try the radamsa command above. You will probably find an exception quite soon after starting running the radamsa command. Both the server and the radamsa script can be stopped with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+In most cases we want try many different request to the server to find bugs, we can tell radamsa to run an infinite amount of times by using `-n inf`
+`radamsa -o 127.0.0.1:8080 -n inf http`{{execute T2}} We can now fuzz for however long we want. You will probably find an exception quite soon after starting running the radamsa command. Both the server and the radamsa script can be stopped with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
