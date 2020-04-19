@@ -6,8 +6,8 @@ To showcase more advanced features of Radamsa we created an java server called `
 <details>
 <summary>Show the file `Server.java`</summary>
 <pre class="file">
-import java.net.*;
-import java.io.*;
+import java.net.\*;
+import java.io.\*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

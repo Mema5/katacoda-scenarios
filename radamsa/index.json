@@ -2,7 +2,7 @@
     "title": "Radamsa tutorial",
     "description": "Install and start black-box fuzzing with Radamsa",
     "difficulty": "beginner",
-    "time": "30 minutes",
+    "time": "20 minutes",
     "details": {
         "assets": {
             "client": [
