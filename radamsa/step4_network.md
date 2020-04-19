@@ -3,6 +3,8 @@ Almost there! Now let's see another example.
 ## A java server
 To showcase more advanced features of Radamsa we created an java server called `Server.java`. The server takes an http request and checks if the request contains a cookie. If the request contains a cookie the server will answer `hello, old user`. If the request does not contain a cookie the server will give the client a cookie and answer with `hello, new user`.
 
+<details>
+<summary>Show the file `Server.java`</summary>
 <pre class="file">
 import java.net.*;
 import java.io.*;
@@ -84,6 +86,7 @@ public class Server {
     }
 }
 </pre>
+</details>
 
 The program can be compiled with `javac Server.java`{{execute}}. To run the program use the `java Server`{{execute}} command. The server is now listening on port 8080 on localhost.
 
