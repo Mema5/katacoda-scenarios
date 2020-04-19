@@ -1,5 +1,7 @@
+Almost there! Now let's see another example.
+
 ## A java server
-To showcase more advanced features of Radamsa we created an java server called `Server.java`. The server takes a request and looks if it contains a cookie, if the request contains a cookie the server will answer `hello, old user`. If the request does not contain a cookie the server will give the client a cookie and answer with `hello, new user`.
+To showcase more advanced features of Radamsa we created an java server called `Server.java`. The server takes an http request and looks if it contains a cookie. If the request contains a cookie the server will answer `hello, old user`. If the request does not contain a cookie the server will give the client a cookie and answer with `hello, new user`.
 
 <pre class="file">
 import java.net.*;
@@ -83,10 +85,14 @@ public class Server {
 }
 </pre>
 
-The program can be compiled by running `javac Server.java`{{execute}}, to run it write `java Server`{{execute}}.
+The program can be compiled with `javac Server.java`{{execute}} and run in background with `java Server &`{{execute}}. It is now listening port 8080 on localhost.
 
-## Fuzz a server
-With the `-o` option of radamsa you can decide where the radamsa output should be output to. This means that radamsa can be used to fuzz a server by acting as a client. With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8080 -n inf http` to fuzz the server. With the `-o` option we tell radamsa where to output, with `-n` we tell radamsa how many times it should run (`inf` means infinite), and `http` is the name of the file that we are using to generate the radamsa output. In this case the `http` file contains the following
+## Try the server
+
+## Fuzz the server
+With the `-o` option, you can decide where Radamsa should output to. This means that Radamsa can be used to fuzz a server by acting as a client. 
+
+With the server running on port 8080 on localhost we can run the command `radamsa -o 127.0.0.1:8080 -n inf http` to fuzz the server. With the `-o` option we tell radamsa where to output, with `-n` we tell radamsa how many times it should run (`inf` means infinite), and `http` is the name of the file that we are using to generate the radamsa output. In this case the `http` file contains the following
 
 ```GET / HTTP/1.1
 Host: localhost:8080

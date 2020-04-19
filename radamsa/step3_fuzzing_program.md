@@ -1,4 +1,4 @@
-Now that we know more what radamsa is capable of, let's use it to fuzz our programs!
+Now that we know more what Radamsa is capable of, let's use it to fuzz our programs!
 
 ## A java program
 For this purpose, we made a basic Java program called `PrimeFactor.java` which takes an integer as command line argument and outputs its prime factor decomposition:
@@ -29,16 +29,16 @@ public class PrimeFactor {
 }
 </pre>
 
-You can compile this program by running `javac PrimeFactor.java`{{execute}} and then try it with `java PrimeFactor 52`{{execute}}.
+You can compile this program by running `javac PrimeFactor.java`{{execute}} and then try it for example with `java PrimeFactor 52`{{execute}}.
 
 ## Fuzz test it with radamsa
-Now we will use radamsa to generate new inputs and see how our program behaves. 
+Now we will use Radamsa to generate new inputs and see how our program behaves. 
 
 We will repeatedly:
 - generate a fuzzed input from a valid integer input and store it in a variable: `fuzzed=$(echo "52" | radamsa)`{{execute}}.
-- call `java PrimeFactor $fuzzed`{{execute}} on it
+- call our program on this fuzzed input: `java PrimeFactor $fuzzed`{{execute}}
 
-The last command will likely raise an exception from the Java integer parser (overflow, illegal characters, wrong syntax...). To test this in bash we can for example check if the exit status stored in the variable `$?` is not equal to `0`.
+The last command will likely raise an exception from the Java integer parser (overflow, illegal characters, wrong syntax...). We can test this in bash by looking at the  exit status stored in the variable `$?`. If it is not equal to `0`, the program has exited non normally.
 
 This leads us to this infinite testing script written in bash:
 

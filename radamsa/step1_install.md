@@ -1,19 +1,11 @@
 In this first step you will learn how to install radamsa. We gave instructions for the three main operating systems but only the lines in the "Linux" section have to be run in the interactive terminal to complete this tuorial.
 
 ## Linux
-Installing Radamsa on linux is very straightforward, the prerequisites needed are wget, make, git, and gcc. If you do not have all of these, install them before continuing the tutorial.
+Installing Radamsa on linux is very straightforward, the prerequisites needed are wget, make, git and gcc. If you do not have all of these, install them before continuing the tutorial.
 
-First you need to download the code from gitlab, this can be done with the command
+First, download the source code from gitlab by running `git clone https://gitlab.com/akihe/radamsa.git`{{execute}}.
 
-`git clone https://gitlab.com/akihe/radamsa.git`{{execute}}
-
-When that is done, you should move to the newly created radamsa directory with the command
-
-`cd radamsa`{{execute}}
-
-Lastly install radamsa by running the following command
-
-`make install`{{execute}}
+When that is done, move to the newly created `radamsa` directory and make the installation: `cd radamsa && make install`{{execute}}
 
 The installation of Radamsa should now be done, you can test it out by running
 
