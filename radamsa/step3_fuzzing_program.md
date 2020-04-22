@@ -47,8 +47,8 @@ This leads us to this infinite testing script written in bash:
 
 while true; do
     fuzzed=$(echo "52" | radamsa)
-    echo "Input string: \"$fuzzed\""
-    java PrimeFactor $fuzzed > /dev/null 2>&1 # throw away stdout and stderr
+    echo "Input string: \"$fuzzed\"" | cat -v # make odd bytes printable 
+    java PrimeFactor "$fuzzed" > /dev/null 2>&1 # throw away stdout and stderr
     if [ $? -ne 0 ]; then
         echo "Exception found!"
     else

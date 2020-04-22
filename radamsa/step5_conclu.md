@@ -4,7 +4,7 @@ In this tutorial, we briefly explained what fuzz testing was. We installed the b
 If there was only one message to remember it would be this one. To make fuzz testing with Radamsa, you need two things:
 
 1. **An input to be fuzzed.** It can be any input in your program: a simple integer or a network request as in this tutorial but also an mp3 or an xml file, a regular expression, an image... From this valid input, Radamsa will generate random mutations.
-2. **An undesired behavior to monitor.** You need to know what you don't want to happen, whether it is a crash, an infinite loop, an unhandled exception or an access to protected resources. Then you have to figure out yourself how to catch and report it.
+2. **An undesired behavior to monitor.** You need to know what you don't want to happen, whether it is a crash, an infinite loop, an unhandled exception or an access to protected resources. For most fuzzing campaigns, a sanitizer is used in addition to help detecting errors (like Google [AddressSanitizer](https://github.com/google/sanitizers)).
 
 ## Links
 Here are some links that we took inspiration from for this tutorial. We invite you to check them if you want more information.
