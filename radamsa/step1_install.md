@@ -5,7 +5,7 @@ Installing Radamsa on linux is very straightforward, the prerequisites needed ar
 
 First, download the source code from gitlab by running `git clone https://gitlab.com/akihe/radamsa.git`{{execute}}.
 
-When that is done, move to the newly created `radamsa` directory and make the installation: `cd radamsa && make install`{{execute}}
+When that is done, move to the newly created `radamsa` directory and make the installation: `cd radamsa && make install`{{execute}}. Wait for the installation to finish.
 
 That's it! The installation of Radamsa should now be done, you can test that everything works fine by hitting `echo "hello" | radamsa -s 3`{{execute}}. The console should output the slightly modified string `hellno`.
 

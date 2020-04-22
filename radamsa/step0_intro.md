@@ -10,8 +10,8 @@ Good test inputs:
 ```
 primefactor 24645342962386
 primefactor 10000000000000000000000000000000    # integer overflow
-primefactor -3                                  # negative numbers
-primefactor 42 546                              # unexpected argument
+primefactor -3                                  # negative number
+primefactor 42 546                              # too many arguments
 primefactor "I’m a integer"                     # wrong argument
 ``` 
 
@@ -19,3 +19,11 @@ Fuzz testing is really used in practice to find weaknesses in security-critical 
 
 ## Radamsa: a black-box fuzzer
 Radamsa is defined by its developers as “extremely black-box”. It means that it requires no assumption on the program structure but only tests in a clever way its usual inputs. That makes Radamsa a very light tool, easy to install and to script. At the end of this tutorial you will have played with it and learnt about its capacities.
+
+## Outline
+- Introduction
+- Step1: Installation
+- Step2: Fuzzing from stdin
+- Step3: Fuzzing a simple Java program
+- Step4: Fuzzing requests to a server
+- Conclusion
